@@ -97,7 +97,7 @@ async function displayAlbums() {
                     </g>
                 </svg>
             </div>
-            <img src="/songs/${folder}/cover.jfif" alt="">
+            <img src="songs/${folder}/cover.jfif" alt="">
             <h2>${response.title}</h2>
             <p>${response.description}</p>
         </div> `
