@@ -129,10 +129,10 @@ async function main() {
     play.addEventListener('click', () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.src = "img/pause.svg";
+            play.src = "./img/pause.svg";
         } else {
             currentSong.pause();
-            play.src = "img/play.svg";
+            play.src = "./img/play.svg";
         }
     });
 
@@ -140,10 +140,10 @@ async function main() {
         if (e.keyCode == 32) {
             if (currentSong.paused) {
                 currentSong.play();
-                play.src = "img/pause.svg";
+                play.src = "./img/pause.svg";
             } else {
                 currentSong.pause();
-                play.src = "img/play.svg";
+                play.src = "./img/play.svg";
             }
         }
     });
@@ -159,7 +159,7 @@ async function main() {
         document.querySelector('.songtime').innerHTML = minutes + ':' + seconds + ' / ' + Math.floor(currentSong.duration / 60) + ':' + String(Math.floor(currentSong.duration % 60)).padStart(2, '0');
         if (currentSong.ended) {
             let index = songs.indexOf(currentSong.src.split(`/${curFolder}/`)[1]);
-            // play.src = "img/play.svg";
+            // play.src = "./img/play.svg";
             playMusic(songs[index + 1]);
         }
         document.querySelector('.circle').style.left = (time / currentSong.duration) * 100 + '%';
