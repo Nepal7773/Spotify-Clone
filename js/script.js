@@ -5,10 +5,10 @@ let curFolder;
 
 const playMusic = (track, pause = false) => {
 
-    currentSong.src = `/${curFolder}/` + decodeURI(track);
+    currentSong.src = `${curFolder}/` + decodeURI(track);
     if (!pause) {
         currentSong.play();
-        play.src = "img/pause.svg";
+        play.src = "./img/pause.svg";
     }
 
     // Update the song name and time
