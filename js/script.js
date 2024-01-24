@@ -40,14 +40,14 @@ async function getSongs(folder) {
     songUL.innerHTML = ""; // Clear the list
     for (const song of songs) {
         songUL.innerHTML += `<li>
-        <img class="invert" src="img/music.svg" alt="">
+        <img class="invert" src="./img/music.svg" alt="">
         <div class="info">
             <div> ${song.replaceAll('%20', " ")} </div>
             <div>${curFolder.split('/')[1]}</div>
         </div>
         <div class="playnow">
             <span>Play Now</span>
-            <img class="invert" src="img/play.svg" alt="">
+            <img class="invert" src="./img/play.svg" alt="">
         </div>
      </li>`
     }
@@ -97,7 +97,7 @@ async function displayAlbums() {
                     </g>
                 </svg>
             </div>
-            <img src="songs/${folder}/cover.jfif" alt="">
+            <img src="./songs/${folder}/cover.jfif" alt="">
             <h2>${response.title}</h2>
             <p>${response.description}</p>
         </div> `
