@@ -290,6 +290,12 @@ body {
 
 }
 
+#play,
+#previous,
+#next {
+    cursor: pointer;
+}
+
 @media (max-width: 1250px) {
     .left {
         position: absolute;
