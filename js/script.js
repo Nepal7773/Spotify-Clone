@@ -8,7 +8,7 @@ const playMusic = (track, pause = false) => {
     currentSong.src = `${curFolder}/` + decodeURI(track);
     if (!pause) {
         currentSong.play();
-        play.src = "./img/pause.svg";
+        play.src = " img/pause.svg";
     }
 
     // Update the song name and time
@@ -40,14 +40,14 @@ async function getSongs(folder) {
     songUL.innerHTML = ""; // Clear the list
     for (const song of songs) {
         songUL.innerHTML += `<li>
-        <img class="invert" src="./img/music.svg" alt="">
+        <img class="invert" src=" img/music.svg" alt="">
         <div class="info">
             <div> ${song.replaceAll('%20', " ")} </div>
             <div>${curFolder.split('/')[1]}</div>
         </div>
         <div class="playnow">
             <span>Play Now</span>
-            <img class="invert" src="./img/play.svg" alt="">
+            <img class="invert" src=" img/play.svg" alt="">
         </div>
      </li>`
     }
@@ -97,7 +97,7 @@ async function displayAlbums() {
                     </g>
                 </svg>
             </div>
-            <img src="./songs/${folder}/cover.jfif" alt="">
+            <img src=" songs/${folder}/cover.jfif" alt="">
             <h2>${response.title}</h2>
             <p>${response.description}</p>
         </div> `
@@ -129,10 +129,10 @@ async function main() {
     play.addEventListener('click', () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.src = "./img/pause.svg";
+            play.src = " img/pause.svg";
         } else {
             currentSong.pause();
-            play.src = "./img/play.svg";
+            play.src = " img/play.svg";
         }
     });
 
@@ -140,10 +140,10 @@ async function main() {
         if (e.keyCode == 32) {
             if (currentSong.paused) {
                 currentSong.play();
-                play.src = "./img/pause.svg";
+                play.src = " img/pause.svg";
             } else {
                 currentSong.pause();
-                play.src = "./img/play.svg";
+                play.src = " img/play.svg";
             }
         }
     });
@@ -159,7 +159,7 @@ async function main() {
         document.querySelector('.songtime').innerHTML = minutes + ':' + seconds + ' / ' + Math.floor(currentSong.duration / 60) + ':' + String(Math.floor(currentSong.duration % 60)).padStart(2, '0');
         if (currentSong.ended) {
             let index = songs.indexOf(currentSong.src.split(`/${curFolder}/`)[1]);
-            // play.src = "./img/play.svg";
+            // play.src = " img/play.svg";
             playMusic(songs[index + 1]);
         }
         document.querySelector('.circle').style.left = (time / currentSong.duration) * 100 + '%';
