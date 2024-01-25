@@ -20,7 +20,7 @@ async function getSongs(folder) {
     curFolder = folder;
     // let a = await fetch(`https://nepal7773.github.io/Spotify-Clone/${folder}/`);
     // let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
-    let a = await fetch(`${folder}/`);
+    let a = await fetch(`./${folder}/`);
     let response = await a.text();
 
     let div = document.createElement("div");
@@ -73,7 +73,7 @@ async function displayAlbums() {
 
     // let a = await fetch(`https://nepal7773.github.io/Spotify-Clone/songs/`);
     // let a = await fetch(`http://127.0.0.1:5500/songs/`);
-    let a = await fetch(`songs/`);
+    let a = await fetch(`./songs/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -91,7 +91,7 @@ async function displayAlbums() {
 
             // let a = await fetch(`https://nepal7773.github.io/Spotify-Clone/songs/${folder}/info.json`);
             // let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
-            let a = await fetch(`${folder}/info.json`);
+            let a = await fetch(`./${folder}/info.json`);
             let response = await a.json();
             // console.log(response);
             cardContainer.innerHTML += `<div data-folder=${folder} class="card">
